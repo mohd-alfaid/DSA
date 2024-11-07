@@ -14,8 +14,8 @@ for(int i =0; i<n; i++)
     cin>>arr[i];
     }
 
-for(int i = n-2; i>=0; i--)
-{
+     for(int i = n-2; i>=0; i--)
+  {
 
     bool swapped = 0;
     for(int j=0; j<=i; j++)
@@ -27,15 +27,13 @@ for(int i = n-2; i>=0; i--)
             swap(arr[j],arr[j+1]);
 
         }
-    }
-
-    if(swapped==0)
-    break;
+       }
+  
+      if(swapped==0)
+         break;
 }
-for(int i=0; i <n; i++)
+       for(int i=0; i <n; i++)
 
-cout<<arr[i]<<"  ";
-
-
+         cout<<arr[i]<<"  ";
 
 }
