@@ -6,7 +6,7 @@ int main()
 
 int arr[1000];
 int n;
-cout<<"Enter the array size :";
+cout<<"Enter the size of Array:";
 cin>>n;
 
 for(int i=0; i<n; i++)
