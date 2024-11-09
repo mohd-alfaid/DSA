@@ -1,33 +1,28 @@
 #include <iostream>
-#include <vector>
+#include <algorithm>  // For the sort function
 using namespace std;
 
 int main() {
-    vector<int> v;
-
-    // Populate the vector
-    v.push_back(5);
-    v.push_back(10);
-    v.push_back(3);
-    v.push_back(2);
-    v.push_back(50);
-    v.push_back(80);
+    // Declare and initialize the array
+    int arr[] = {5, 10, 3, 2, 50, 80};
+    int n = sizeof(arr) / sizeof(arr[0]);  // Calculate the number of elements in the array
+    
+    // Sort the array
+    sort(arr, arr + n);
 
     int target = 45;
     int start = 0;
-    int end = v.size() - 1;
+    int end = 1;
 
     // Two-pointer logic
-    while (start < end) {
-        int sum = v[end] - v[start];
-
-        if (sum == target) {
-            cout << "Pair found: " << v[start] << ", " << v[end] << endl;
-            return 0; // Exit once we find the pair
-        } else if (sum < target) {
-            start++; // Move the start pointer to increase the sum
+    while (end < n) {
+        if (arr[end] - arr[start] == target) {  // Calculate the difference
+            cout << "Pair found: " << arr[start] << ", " << arr[end] << endl;
+            return 0;  // Exit once we find the pair
+        } else if (arr[end] - arr[start] < target) {
+            end++;  // Move the end pointer to increase the sum
         } else {
-            end--; // Move the end pointer to decrease the sum
+            start++;  // Move the start pointer to decrease the sum
         }
     }
 
